@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'ouyanggao' => '804716454@qq.com' }
-  s.source           = { :git => 'https://github.com/ouyanggao/OYModule.git', :tag => s.version.to_s   }
+  s.source           = { :git => 'https://github.com/ouyanggao/OYModule.git', :tag => "v#{s.version}"  }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
@@ -34,18 +34,16 @@ Pod::Spec.new do |s|
 
   s.default_subspec='All'
   s.subspec 'All' do |ss|
-    ss.ios.dependency 'OYModule/UIKit'
-    ss.ios.dependency 'OYModule/NSObject'
+    ss.ios.dependency 'OYModule/OYBarrageRenderer'
   end
 
-  s.subspec 'UIKit' do |ss|
-    ss.source_files='OYModule/NSObject+OYModule.{h,m}','OYModule/UIKit/*.{h,m}'
-  end
 
-  s.subspec 'NSObject' do |ss|
-    ss.ios.dependency 'OYModule/UIKit'
-    ss.source_files='OYModule/NSObject/*.{h,m}'
+
+  s.subspec 'OYBarrageRenderer' do |ss|
+    ss.ios.dependency 'OYModule/OYBarrageRenderer'
+    ss.source_files='OYModule/OYBarrageRenderer/*.{h,m}'
     #ss.ios.frameworks = 'OYModuleUIKit'
+    ss.dependency 'BarrageRenderer','~>2.1.0'
 
   end
 
