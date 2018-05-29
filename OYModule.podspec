@@ -40,10 +40,12 @@ Pod::Spec.new do |s|
 
 
   s.subspec 'OYBarrageRenderer' do |ss|
-    ss.ios.dependency 'OYModule/OYBarrageRenderer'
     ss.source_files='OYModule/OYBarrageRenderer/*.{h,m}'
     #ss.ios.frameworks = 'OYModuleUIKit'
     ss.dependency 'BarrageRenderer','~>2.1.0'
+    ss.dependency 'YYKit'
+    ss.dependency 'Masonry', '~> 1.0.2'
+    ss.dependency 'BlocksKit'
 
   end
 
